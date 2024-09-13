@@ -101,7 +101,7 @@ export default function HomeScreen() {
         onBarcodeScanned={handleBarcodeScanned}
         onCameraReady={() => console.log("camera is ready")}
       >
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 40 }}>
           <View style={{ flex: 1, padding: 6 }}>
             {qrCodeDetected ? (
               <QRCodeButton handleOpenQRCode={handleOpenQRCode} />

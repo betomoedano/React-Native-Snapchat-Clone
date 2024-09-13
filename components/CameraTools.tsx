@@ -34,7 +34,7 @@ export default function CameraTools({
         iosName={
           cameraTorch ? "flashlight.off.circle" : "flashlight.slash.circle"
         }
-        androidName="flash"
+        androidName={cameraTorch ? "flash" : "flash-off"}
       />
       <IconButton
         onPress={() =>
@@ -52,7 +52,7 @@ export default function CameraTools({
           setCameraFlash((prevValue) => (prevValue === "off" ? "on" : "off"))
         }
         iosName={cameraFlash === "on" ? "bolt.circle" : "bolt.slash.circle"}
-        androidName="close"
+        androidName={cameraFlash === "on" ? "flash" : "flash-off"}
       />
       <IconButton
         onPress={() => {}}

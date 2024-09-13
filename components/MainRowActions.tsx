@@ -4,6 +4,7 @@ import {
   FlatList,
   ScrollView,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -79,7 +80,22 @@ export default function MainRowActions({
             },
             repeating: isRecording,
           }}
-          // fallback={} TODO: Add a fallback for android
+          fallback={
+            <TouchableOpacity
+              onPress={handleTakePicture}
+              style={{
+                width: 90,
+                height: 90,
+                borderWidth: 1,
+                borderColor: "white",
+                borderRadius: 45,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text>{cameraMode === "picture" ? "📷" : "🎥"}</Text>
+            </TouchableOpacity>
+          }
         />
       </TouchableOpacity>
       <ScrollView
